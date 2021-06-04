@@ -199,15 +199,10 @@ export class ActorQueryOperationBgpLeftDeepSmallest extends ActorQueryOperationT
       .map(ActorQueryOperation.getSafeBindings);
 
     // If a triple pattern has no matches, the entire graph pattern has no matches.
-/*    if (await ActorQueryOperationBgpLeftDeepSmallest.hasOneEmptyPatternOutput(patternOutputs)) {
+    if (await ActorQueryOperationBgpLeftDeepSmallest.hasOneEmptyPatternOutput(patternOutputs)) {
       return {
-        bindingsStream: new ArrayIterator([], { autoStart: false }),
-        metadata: () => Promise.resolve({ totalItems: 0 }),
-        type: 'bindings',
-        variables: ActorQueryOperationBgpLeftDeepSmallest.getCombinedVariables(patternOutputs),
-        canContainUndefs: false,
+        console.log(`blah`)
       };
- */
     }
 
     // Find the pattern with the smallest number of elements
